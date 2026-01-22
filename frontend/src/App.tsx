@@ -19,11 +19,11 @@ function App() {
 
         {/*The Title */}
         <h1 className="text-2xl font-extrabold text-center tracking-tight text-gray-800">
-          UtilityBill<span className="text-blue-600">Calc</span>
+          Utility Bill Calculator
         </h1>
 
         {/* The Buttons */}
-        <div className="flex justify-end gap-2">
+        <div className="flex justify-end gap-8">
           <button 
             onClick={() => setView('user')} 
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${

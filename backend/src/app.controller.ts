@@ -2,19 +2,28 @@ import { Controller, Get, Post, Body, Put, Headers, UnauthorizedException, Valid
 import { AppService } from './app.service';
 import { UpdateConfigDto, CalculateBillDto } from './dtos';
 
-@Controller('api')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  //  calculate bill (public)
-  @Post('calculate')
+  // --- 1. HEALTH CHECK ---
+  // Url: http://localhost:3000/
+  @Get()
+  getHello(): string {
+    return 'Utility Bill API is running!';
+  }
+
+  // --- 2. PROJECT WORKING SYSTEM (api/home) ---
+
+  // Url: http://localhost:3000/api/home/calculate
+  @Post('api/home/calculate')
   @UsePipes(new ValidationPipe())
   async calculate(@Body() body: CalculateBillDto) {
     return this.appService.calculateBill(body.units);
   }
 
-  // update config Protected by header key
-  @Put('admin/config')
+  // Url: http://localhost:3000/api/home/admin/config
+  @Put('api/home/admin/config')
   @UsePipes(new ValidationPipe())
   async updateConfig(
     @Body() body: UpdateConfigDto,
@@ -26,16 +35,12 @@ export class AppController {
     return this.appService.updateConfig(body);
   }
 
-  //  get current config for admin pre_filling)
-  @Get('admin/config')
+  // Url: http://localhost:3000/api/home/admin/config
+  @Get('api/home/admin/config')
   async getConfig(@Headers('x-admin-key') adminKey: string) {
     if (adminKey !== process.env.ADMIN_SECRET) {
       throw new UnauthorizedException('Invalid admin key try again..');
     }
     return this.appService.getConfig();
-  }
-
-  getHello(): string {
-    return 'Hello World!';
   }
 }

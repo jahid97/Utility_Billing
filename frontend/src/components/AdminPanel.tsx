@@ -68,6 +68,7 @@ export default function AdminPanel() {
           type="password" 
           placeholder="Enter Admin Security Key" 
           className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          style={{ minHeight: '40px' }}
           value={key}
           onChange={(e) => setKey(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && fetchConfig()}

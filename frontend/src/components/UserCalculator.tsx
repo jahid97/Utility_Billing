@@ -60,7 +60,8 @@ export default function UserCalculator() {
             type="number" 
             value={units} 
             onChange={(e) => setUnits(Number(e.target.value))}
-            className="mt-1 block w-full p-2 border rounded-md"
+            className="mt-1 block w-full px-3 py-4 text-lg border rounded-md"
+            style={{ minHeight: '40px' }}
             placeholder="e.g. 150"
           />
         </div>
