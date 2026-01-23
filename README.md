@@ -60,3 +60,12 @@ This project is organized as a monorepo:
 │   └── package.json
 │
 └── README.md
+```
+##⚙️ Installation & Local Setup
+Follow these steps to run the project locally on your machine.
+** 1. Clone the Repository
+```bash
+git clone [https://github.com/YOUR_USERNAME/utility-bill-app.git](https://github.com/YOUR_USERNAME/utility-bill-app.git)
+cd utility-bill-app
+```
+
