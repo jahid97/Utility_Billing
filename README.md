@@ -1,4 +1,4 @@
-# ⚡ Utility Bill Management System
+# ⚡ Utility Bill Calculator With Admin
 
 A full-stack small application to calculate utility bills and manage pricing configurations dynamically with a billing receipt download option. Built with modern TypeScript, featuring a React frontend and a NestJS backend.
 
